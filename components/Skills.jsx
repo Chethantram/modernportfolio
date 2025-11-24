@@ -12,6 +12,8 @@ import mongoImg from "../images/mongodb.png";
 import pythonImg from "../images/python.png";
 import prismaImg from "../images/prisma.png";
 import mysqlImg from "../images/mysql.png";
+import linuxImg from "../images/linux.png";
+import gitImg from "../images/git.png";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -64,7 +66,7 @@ const Skills = () => {
       </h1>
       <div className="absolute top-0  z-0 w-full h-[450px] md:h-[300px]  bg-gradient-to-r from-pink-500 to-blue-500 rounded-full blur-3xl opacity-15 "></div>
 
-        <div className="mt-14 z-10 grid grid-cols-3 md:flex items-center gap-5 md:gap-16 md:max-w-[650px] mx-auto">
+        <div className="mt-14 z-10 grid grid-cols-3 md:flex items-center gap-5 md:gap-16 md:max-w-[700px] mx-auto">
           <div className="flex flex-col items-center justify-center skill-icon">
             <Image
               src={htmlImg}
@@ -97,7 +99,7 @@ const Skills = () => {
               height={40}
               className=""
             />
-            <p className="text-gray-600 dark:text-gray-200 font-medium text-sm mt-1">React Js</p>
+            <p className="text-gray-600 dark:text-gray-200 font-medium text-sm mt-1">ReactJs</p>
           </div>
           <div className="flex flex-col items-center justify-center skill-icon">
             <Image
@@ -107,7 +109,7 @@ const Skills = () => {
               height={40}
               className=""
             />
-            <p className="text-gray-600 dark:text-gray-200 font-medium text-sm mt-1">Next Js</p>
+            <p className="text-gray-600 dark:text-gray-200 font-medium text-sm mt-1">NextJs</p>
           </div>
           <div className="flex flex-col items-center justify-center skill-icon">
             <Image
@@ -117,7 +119,17 @@ const Skills = () => {
               height={40}
               className=""
             />
-            <p className="text-gray-600 dark:text-gray-200 font-medium text-sm mt-1">Node JS</p>
+            <p className="text-gray-600 dark:text-gray-200 font-medium text-sm mt-1">NodeJS</p>
+          </div>
+          <div className="flex flex-col items-center justify-center skill-icon">
+            <Image
+              src={linuxImg}
+              alt="html"
+              width={40}
+              height={40}
+              className=""
+            />
+            <p className="text-gray-600 dark:text-gray-200 font-medium text-sm mt-1">Linux</p>
           </div>
         </div>
         <div className="mt-8 md:mt-14 z-10 grid grid-cols-3 md:flex items-center gap-5 md:gap-16 md:pl-5 md:max-w-[650px] mx-auto">
@@ -172,6 +184,16 @@ const Skills = () => {
               className=""
             />
             <p className="text-gray-600 dark:text-gray-200 font-medium text-sm mt-1">MySql</p>
+          </div>
+          <div className="flex flex-col items-center justify-center skill-icon">
+            <Image
+              src={gitImg}
+              alt="html"
+              width={40}
+              height={40}
+              className=""
+            />
+            <p className="text-gray-600 dark:text-gray-200 font-medium text-sm mt-1">Git</p>
           </div>
         </div>
       

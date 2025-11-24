@@ -8,13 +8,21 @@ const About = () => {
       </h1>
       <div className="mt-5">
         <p className="text-gray-600 dark:text-gray-300 leading-relaxed font-medium  ">
-          Hi, I'm Chethan — a Full Stack Developer who builds seamless,
-          scalable, and stunning digital experiences. From crafting
-          pixel-perfect UIs to engineering robust backends, I love turning ideas
-          into reality through clean code and modern technology. Whether it's
-          React, Node.js, or MongoDB, I blend creativity and logic to deliver
-          high-performance web applications that users love and businesses
-          trust.
+          I am Chethan T, a passionate software developer currently pursuing a
+          Bachelor of Technology in Computer Science with a strong academic
+          record and hands-on experience in full-stack development. I specialize
+          in building scalable and user-centric web applications using modern
+          technologies such as React.js, Next.js, Node.js, and MongoDB. <br className="mb-6" /> 
+          With a solid foundation in programming languages like Java, Python,
+          and JavaScript, I focus on writing clean, maintainable code and
+          delivering solutions that enhance user experience. My recent projects
+          include AI-powered platforms, real-time budgeting apps, and
+          educational tools that demonstrate my proficiency in machine learning,
+          computer vision, and cloud technologies. <br className="mb-6"/>I thrive in
+          collaborative environments, leveraging leadership and problem-solving
+          skills to drive project success and continuous learning. I am eager to
+          contribute to impactful projects and advance my expertise in software
+          engineering.
         </p>
       </div>
     </div>

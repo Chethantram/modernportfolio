@@ -51,11 +51,10 @@ const Header = () => {
           ))}
         </h1>
         <h3 className="text-2xl  md:text-4xl mt-2 font-bold text-gray-800 dark:bg-gradient-to-r from-pink-400 via-cyan-500 to-blue-500 bg-clip-text dark:text-transparent">
-          Full-Stack Developer
+          Software Developer
         </h3>
         <p className="text-gray-600 dark:text-gray-400 font-medium mt-7 max-w-[330px]  md:max-w-[500px] xl:max-w-[500px] lg:max-w-[400px]">
-          I am an aspiring full-stack developer passionate about building web
-          applications using modern technologies.
+          Led end-to-end project delivery from requirements analysis to deployment, including database management and API integration.
         </p>
         <div className="mt-10 flex items-center gap-5 ">
           <a href="#contact">

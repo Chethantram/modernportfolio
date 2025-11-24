@@ -1,9 +1,11 @@
-'use client'
+"use client";
 import Image from "next/image";
 import projectThumb from "../images/dummyProject.jpg";
 import wealthThumb from "../images/wealth.png";
+import fashionThumb from "../images/fashion.png";
 import blogThumb from "../images/blog.png";
 import lmsThumb from "../images/lms.png";
+import quizThumb from "../images/quiz.png";
 import githubImg from "../images/github.png";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { MoveRight, Triangle } from "lucide-react";
@@ -20,9 +22,24 @@ const Projects = () => {
 
   useGSAP(() => {
     const projects = [
-      { img: ".project-img-left", info: ".project-info-right", xImg: -120, xInfo: 120 },
-      { img: ".project-img-right", info: ".project-info-left", xImg: 120, xInfo: -120 },
-      { img: ".project-img-left-2", info: ".project-info-right-2", xImg: -120, xInfo: 120 },
+      {
+        img: ".project-img-left",
+        info: ".project-info-right",
+        xImg: -120,
+        xInfo: 120,
+      },
+      {
+        img: ".project-img-right",
+        info: ".project-info-left",
+        xImg: 120,
+        xInfo: -120,
+      },
+      {
+        img: ".project-img-left-2",
+        info: ".project-info-right-2",
+        xImg: -120,
+        xInfo: 120,
+      },
     ];
     projects.forEach((proj, i) => {
       const imgEls = q(proj.img);
@@ -98,12 +115,82 @@ const Projects = () => {
           View all <MoveRight />
         </Link>
       </div>
+      {/* Project 0: Image left, Info left */}
+      <div className="relative md:flex  md:flex-row-reverse items-center md:justify-between lg:justify-evenly gap-4 mt-10 md:mt-20 border-2 border-gray-900/70 dark:border-white/60 md:border-none  md:p-0 rounded-xl md:rounded-none bg-gray-700/20 md:bg-transparent">
+        <div className="absolute top-0  z-0 w-full h-[450px] lg:h-[200px] md:h-[300px]   bg-gradient-to-r from-pink-500 to-blue-500 rounded-full blur-3xl opacity-15 "></div>
+        <div className="project-img-right">
+          <Image
+            src={fashionThumb}
+            alt="thumbnail"
+            width={200}
+            height={200}
+            className="object-cover mx-auto w-[450px] h-[180px] md:h-[230px] overflow-hidden rounded-t-xl md:rounded-xl sm:mt-3 md:mt-0 md:p-2 md:border-2 border-gray-300/40 md:bg-gray-100 dark:md:bg-gray-800/50"
+          />
+        </div>
+        <div className="project-info-left mt-2 md:mt-0 mx-3 md:mx-0 md:w-[650px] space-y-3 md:space-y-5 p-1 md:p-0">
+          <h1 className="text-xl font-medium ">
+            Personalized Fashion Styling Engine with Image-Based Virtual Fitting
+          </h1>
+          <p className="md:p-5 text-gray-600 dark:text-gray-400 md:bg-gray-100 dark:md:bg-gray-800/50 rounded-2xl text-sm  font-medium  md:line-clamp-none">
+            Developed an AI-powered virtual fashion stylist that provides
+            personalized outfit recommendations based on user preferences and
+            images. The app uses machine learning, natural language processing,
+            and computer vision to analyze styles and suggest outfits. Built
+            with the MERN stack and FastAPI, it offers a responsive and
+            user-friendly interface with features like style matching, trend
+            analysis, and feedback-based recommendation refinement.
+            <br />
+            <br />
+            <strong>Tech Stack : </strong>{" "}
+            <span className="italic">
+              React.js, Node.js, Express.js, MongoDB, Python, FastAPI, Hugging
+              Face Model, Scikit-Learn, Tailwind CSS.
+            </span>
+          </p>
+          <div className="flex items-center gap-5 ml-5">
+            <Link
+              href="https://github.com/Chethantram/FashionStylist"
+              target="_blank"
+            >
+              <Tooltip>
+                <TooltipTrigger>
+                  <Image
+                    src={githubImg}
+                    alt="github"
+                    width={30}
+                    height={30}
+                    className="bg-white/60 rounded-full -z-10"
+                  />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Github Link</p>
+                </TooltipContent>
+              </Tooltip>
+            </Link>
+            {/* <Link
+              href="https://blog-sphere-orpin.vercel.app/"
+              target="_blank"
+            >
+              <Tooltip>
+                <TooltipTrigger>
+                  <span>
+                    <Triangle className="size-6 bg-black/30 w-8 h-8 p-1.5 border-white/50 border-2 rounded-full" />
+                  </span>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Vercel Link</p>
+                </TooltipContent>
+              </Tooltip>
+            </Link> */}
+          </div>
+        </div>
+      </div>
       {/* Project 1: Image right, Info left */}
       <div className="relative flex flex-col-reverse md:flex-row-reverse items-center md:justify-between lg:justify-evenly gap-4 mt-4 md:mt-20 border-2 border-gray-900/70 dark:border-white/60 md:border-none  md:p-0 rounded-xl md:rounded-none bg-gray-700/20 md:bg-transparent">
         <div className="absolute top-0  z-0 w-full h-[300px] lg:h-[200px] md:h-[300px]  bg-gradient-to-r from-pink-500 to-blue-500 rounded-full blur-3xl opacity-15 "></div>
         <div className="project-info-right mx-3 md:mx-0 md:w-[650px] space-y-3 md:space-y-5 p-1 md:p-0 ">
           <h1 className="text-xl font-medium ">
-            AI WealthTrack – Personal Finance Tracker Web Application
+            Smart Budgeting and Expense Visualization App
           </h1>
           <p className="md:p-5 text-gray-600 dark:text-gray-400  md:bg-gray-100 dark:md:bg-gray-800/50 rounded-2xl text-sm font-medium line-clamp-3 md:line-clamp-none">
             Designed and developed a full-stack personal finance tracker using
@@ -116,6 +203,13 @@ const Projects = () => {
             for edge-level security and Resend for email communication. The
             platform delivers a modern, secure, and responsive solution for
             personal financial planning.
+            <br />
+            <br />
+            <strong>Tech Stack : </strong>{" "}
+            <span className="italic">
+              Next.js, Node.js, Express.js, MongoDB, Arcjet, Inngest, Prisma
+              ORM, Supabase, Tailwind CSS, Recharts, Resend.
+            </span>
           </p>
           <div className="flex items-center gap-5 ml-5">
             <Link
@@ -169,7 +263,7 @@ const Projects = () => {
         <div className="absolute top-0  z-0 w-full h-[450px] lg:h-[200px] md:h-[300px]   bg-gradient-to-r from-pink-500 to-blue-500 rounded-full blur-3xl opacity-15 "></div>
         <div className="project-img-right">
           <Image
-            src={blogThumb}
+            src={quizThumb}
             alt="thumbnail"
             width={200}
             height={200}
@@ -178,19 +272,29 @@ const Projects = () => {
         </div>
         <div className="project-info-left mt-2 md:mt-0 mx-3 md:mx-0 md:w-[650px] space-y-3 md:space-y-5 p-1 md:p-0">
           <h1 className="text-xl font-medium ">
-            BlogSphere – Full-Stack Blogging Platform
+            Smart Educational Assessment Tool with Firebase Authentication and
+            Cloud Storage
           </h1>
           <p className="md:p-5 text-gray-600 dark:text-gray-400 md:bg-gray-100 dark:md:bg-gray-800/50 rounded-2xl text-sm font-medium line-clamp-3 md:line-clamp-none">
-            Built a responsive blogging platform using Next.js, MongoDB, Clerk,
-            and Tailwind CSS.Integrated user authentication with Clerk and
-            implemented category-based blog filtering.Developed RESTful APIs to
-            fetch and display blog content dynamically with detailed
-            views.Designed a mobile-friendly UI with reusable components for
-            scalable and clean architecture.
+            Developed an AI-driven quiz generator that automatically converts
+            PDFs into customizable quizzes with adjustable difficulty, language
+            options, and question count. The system employs natural language
+            processing and machine learning to extract key information and
+            generate diverse question types such as multiple-choice, true/false,
+            and short answers. Integrated Firebase Authentication and Cloud
+            Storage for secure user login, profile management, and real-time
+            quiz performance tracking. The application is deployed on Vercel
+            ensuring fast and seamless access across devices.
+            <br />
+            <br />
+            <strong>Tech Stack : </strong>{" "}
+            <span className="italic">
+              Next.js, Firebase, Gemini API, MongoDB, Tailwind CSS.
+            </span>
           </p>
           <div className="flex items-center gap-5 ml-5">
             <Link
-              href="https://github.com/Chethantram/BlogSphere-"
+              href="https://github.com/Chethantram/quiz-forge-ai"
               target="_blank"
             >
               <Tooltip>
@@ -208,10 +312,7 @@ const Projects = () => {
                 </TooltipContent>
               </Tooltip>
             </Link>
-            <Link
-              href="https://blog-sphere-orpin.vercel.app/"
-              target="_blank"
-            >
+            <Link href="https://quiz-forge-ai-ten.vercel.app/" target="_blank">
               <Tooltip>
                 <TooltipTrigger>
                   <span>
@@ -230,11 +331,27 @@ const Projects = () => {
       <div className="relative flex flex-col-reverse md:flex-row-reverse items-center md:justify-between lg:justify-evenly gap-4 mt-10 md:mt-20 border-2 border-gray-900/70 dark:border-white/60 md:border-none  md:p-0 rounded-xl md:rounded-none bg-gray-700/20 md:bg-transparent">
         <div className="absolute top-0  z-0 w-full h-[300px] lg:h-[200px] md:h-[300px]  bg-gradient-to-r from-pink-500 to-blue-500 rounded-full blur-3xl opacity-15 "></div>
         <div className="project-info-right-2 mx-3 md:mx-0 md:w-[650px] space-y-3 md:space-y-5 p-1 md:p-0">
-          <h1 className="text-xl font-medium ">E-LearnHub – Full-Stack Learning Management System
-
-</h1>
+          <h1 className="text-xl font-medium ">
+            Full-Stack LMS with Payment and Multimedia Management
+          </h1>
           <p className="md:p-5 text-gray-600 dark:text-gray-400 md:bg-gray-100 dark:md:bg-gray-800/50 rounded-2xl text-sm font-medium line-clamp-3 md:line-clamp-none">
-            Developed a full-stack Learning Management System (LMS) enabling instructors to create and manage online courses, and students to enroll, track progress, and access learning content. Implemented secure user authentication and role-based authorization, integrated Stripe for seamless payment processing, and used Cloudinary for dynamic media uploads. Built with Node.js, MongoDB, and Express.js for backend operations, and employed responsive design principles to ensure optimal user experience across devices. The application features real-time progress tracking, course dashboards, and robust backend architecture for scalability.
+            Developed a full-stack Learning Management System (LMS) enabling
+            instructors to create and manage online courses, and students to
+            enroll, track progress, and access learning content. Implemented
+            secure user authentication and role-based authorization, integrated
+            Stripe for seamless payment processing, and used Cloudinary for
+            dynamic media uploads. Built with Node.js, MongoDB, and Express.js
+            for backend operations, and employed responsive design principles to
+            ensure optimal user experience across devices. The application
+            features real-time progress tracking, course dashboards, and robust
+            backend architecture for scalability.
+            <br />
+            <br />
+            <strong>Tech Stack : </strong>{" "}
+            <span className="italic">
+              React.js, Node.js, Express.js, MongoDB, Redux, Stripe, Cloudinary,
+              Tailwind CSS.
+            </span>
           </p>
           <div className="flex items-center gap-5 ml-5">
             <Link

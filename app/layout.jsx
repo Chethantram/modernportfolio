@@ -1,12 +1,12 @@
 import "./globals.css";
-import { Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const poppins = Poppins({
+const poppins = Inter({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["100","200","300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
