@@ -53,7 +53,7 @@ const Navbar = () => {
           </Link>
           <div className="hidden sm:block">
             <ul className="flex items-center gap-5 text-sm font-medium">
-              <Link
+              {/* <Link
                 href="#home"
                 className={`hover:border-2 hover:border-gray-500/50 hover:px-2 hover:rounded-4xl ${
                   menu === "Home" ? "border-2 border-gray-800/80 dark:border-gray-400/80 px-2 rounded-4xl" : ""
@@ -61,7 +61,7 @@ const Navbar = () => {
                 onClick={() => setMenu("Home")}
               >
                 Home
-              </Link>
+              </Link> */}
               <Link
                 href="#about"
                 className={`hover:border-2 hover:border-gray-500/50 hover:px-2 hover:rounded-4xl ${
@@ -81,6 +81,15 @@ const Navbar = () => {
                 Services
               </Link>
               <Link
+                href="#experience"
+                className={`hover:border-2 hover:border-gray-500/50 hover:px-2 hover:rounded-4xl ${
+                  menu === "Experience" ? "border-2 border-gray-800/80 dark:border-gray-400/80 px-2 rounded-4xl" : ""
+                }`}
+                onClick={() => setMenu("Experience")}
+              >
+                Experience
+              </Link>
+              <Link
                 href="#projects"
                 className={`hover:border-2 hover:border-gray-500/50 hover:px-2 hover:rounded-4xl ${
                   menu === "Projects" ? "border-2 border-gray-800/80 dark:border-gray-400/80 px-2 rounded-4xl" : ""
@@ -88,6 +97,15 @@ const Navbar = () => {
                 onClick={() => setMenu("Projects")}
               >
                 Projects
+              </Link>
+              <Link
+                href="#certificate"
+                className={`hover:border-2 hover:border-gray-500/50 hover:px-2 hover:rounded-4xl ${
+                  menu === "Certificate" ? "border-2 border-gray-800/80 dark:border-gray-400/80 px-2 rounded-4xl" : ""
+                }`}
+                onClick={() => setMenu("Certificate")}
+              >
+                Certificate
               </Link>
             </ul>
           </div>
@@ -108,7 +126,7 @@ const Navbar = () => {
                 </SheetHeader>
                 <div className="p-5 ">
                   <ul className="flex flex-col items-start  gap-3 text-sm font-medium">
-                    <Link
+                    {/* <Link
                       href="#home"
                       className={`hover:text-blue-500 ${
                         menu === "Home" ? "text-blue-600" : ""
@@ -119,7 +137,7 @@ const Navbar = () => {
                       }}
                     >
                       Home
-                    </Link>
+                    </Link> */}
                     <Link
                       href="#about"
                       className={`hover:text-blue-500 ${
@@ -145,6 +163,18 @@ const Navbar = () => {
                       Services
                     </Link>
                     <Link
+                      href="#experience"
+                      className={`hover:text-blue-500 ${
+                        menu === "Experience" ? "text-blue-600" : ""
+                      }`}
+                      onClick={() => {
+                        setMenu("Experience");
+                        setOpen(false);
+                      }}
+                    >
+                      Experience
+                    </Link>
+                    <Link
                       href="#projects"
                       className={`hover:text-blue-500 ${
                         menu === "Projects" ? "text-blue-600" : ""
@@ -155,6 +185,18 @@ const Navbar = () => {
                       }}
                     >
                       Projects
+                    </Link>
+                    <Link
+                      href="#certificate"
+                      className={`hover:text-blue-500 ${
+                        menu === "Certificate" ? "text-blue-600" : ""
+                      }`}
+                      onClick={() => {
+                        setMenu("Certificate");
+                        setOpen(false);
+                      }}
+                    >
+                      Certificate
                     </Link>
                   </ul>
                 </div>

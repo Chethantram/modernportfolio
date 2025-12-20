@@ -146,8 +146,8 @@ const AllProjects = () => {
           />
         </div>
         <div className="project-info-left mt-2 md:mt-0 mx-3 md:mx-0 md:w-[650px] space-y-3 md:space-y-5 p-1 md:p-0">
-          <h1 className="text-xl font-medium ">
-            Personalized Fashion Styling Engine with Image-Based Virtual Fitting
+          <h1 className="text-xl font-medium text-[#007595] dark:text-blue-400">
+            1. Personalized Fashion Styling Engine with Image-Based Virtual Fitting
           </h1>
           <p className="md:p-5 text-gray-600 dark:text-gray-400 md:bg-gray-100 dark:md:bg-gray-800/50 rounded-2xl text-sm font-medium line-clamp-3 md:line-clamp-none">
             Developed an AI-powered virtual fashion stylist that provides
@@ -159,7 +159,7 @@ const AllProjects = () => {
             analysis, and feedback-based recommendation refinement.
             <br />
             <br />
-            <strong>Tech Stack : </strong>{" "}
+            <strong className="text-blue-500">Tech Stack : </strong>{" "}
             <span className="italic">
               React.js, Node.js, Express.js, MongoDB, Python, FastAPI, Hugging
               Face Model, Scikit-Learn, Tailwind CSS.
@@ -207,8 +207,8 @@ const AllProjects = () => {
       <div className="relative flex flex-col-reverse md:flex-row-reverse items-center md:justify-between lg:justify-evenly gap-4 mt-4 md:mt-20 border-2 border-gray-900/70 dark:border-white/60 md:border-none  md:p-0 rounded-xl md:rounded-none bg-gray-700/20 md:bg-transparent">
         <div className="absolute top-0  z-0 w-full h-[300px] lg:h-[200px] md:h-[300px]  bg-gradient-to-r from-pink-500 to-blue-500 rounded-full blur-3xl opacity-15 "></div>
         <div className="project-info-right mx-3 md:mx-0 md:w-[650px] space-y-3 md:space-y-5 p-1 md:p-0 ">
-          <h1 className="text-xl font-medium ">
-            AI WealthTrack – Personal Finance Tracker Web Application
+          <h1 className="text-xl font-medium text-[#007595] dark:text-blue-400 ">
+            2.AI WealthTrack – Personal Finance Tracker Web Application
           </h1>
           <p className="md:p-5 text-gray-600 dark:text-gray-400  md:bg-gray-100 dark:md:bg-gray-800/50 rounded-2xl text-sm font-medium line-clamp-3 md:line-clamp-none">
             Designed and developed a full-stack personal finance tracker using
@@ -223,7 +223,7 @@ const AllProjects = () => {
             personal financial planning.
             <br />
             <br />
-            <strong>Tech Stack : </strong>{" "}
+            <strong className="text-blue-500">Tech Stack : </strong>{" "}
             <span className="italic">
               Next.js, Node.js, Express.js, MongoDB, Arcjet, Inngest, Prisma
               ORM, Supabase, Tailwind CSS, Recharts, Resend.
@@ -290,8 +290,8 @@ const AllProjects = () => {
           />
         </div>
         <div className="project-info-left mt-2 md:mt-0 mx-3 md:mx-0 md:w-[650px] space-y-3 md:space-y-5 p-1 md:p-0">
-          <h1 className="text-xl font-medium ">
-            Smart Educational Assessment Tool with Firebase Authentication and
+          <h1 className="text-xl font-medium text-[#007595] dark:text-blue-400">
+            3. Smart Educational Assessment Tool with Firebase Authentication and
             Cloud Storage
           </h1>
           <p className="md:p-5 text-gray-600 dark:text-gray-400 md:bg-gray-100 dark:md:bg-gray-800/50 rounded-2xl text-sm font-medium line-clamp-3 md:line-clamp-none">
@@ -306,7 +306,7 @@ const AllProjects = () => {
             ensuring fast and seamless access across devices.
             <br />
             <br />
-            <strong>Tech Stack : </strong>{" "}
+            <strong className="text-blue-500">Tech Stack : </strong>
             <span className="italic">
               Next.js, Firebase, Gemini API, MongoDB, Tailwind CSS.
             </span>
@@ -351,8 +351,8 @@ const AllProjects = () => {
       <div className="relative flex flex-col-reverse md:flex-row-reverse items-center md:justify-between lg:justify-evenly gap-4 mt-10 md:mt-20 border-2 border-gray-900/70 dark:border-white/60 md:border-none  md:p-0 rounded-xl md:rounded-none bg-gray-700/20 md:bg-transparent">
         <div className="absolute top-0  z-0 w-full h-[300px] lg:h-[200px] md:h-[300px]  bg-gradient-to-r from-pink-500 to-blue-500 rounded-full blur-3xl opacity-15 "></div>
         <div className="project-info-right-2 mx-3 md:mx-0 md:w-[650px] space-y-3 md:space-y-5 p-1 md:p-0">
-          <h1 className="text-xl font-medium ">
-            E-LearnHub – Full-Stack Learning Management System
+          <h1 className="text-xl font-medium text-[#007595] dark:text-blue-400">
+            4. E-LearnHub – Full-Stack Learning Management System
           </h1>
           <p className="md:p-5 text-gray-600 dark:text-gray-400 md:bg-gray-100 dark:md:bg-gray-800/50 rounded-2xl text-sm font-medium line-clamp-3 md:line-clamp-none">
             Developed a full-stack Learning Management System (LMS) enabling
@@ -367,7 +367,7 @@ const AllProjects = () => {
             backend architecture for scalability.
             <br />
             <br />
-            <strong>Tech Stack : </strong>{" "}
+            <strong className="text-blue-500">Tech Stack : </strong>{" "}
             <span className="italic">
               React.js, Node.js, Express.js, MongoDB, Redux, Stripe, Cloudinary,
               Tailwind CSS.
@@ -418,8 +418,8 @@ const AllProjects = () => {
           />
         </div>
         <div className="project-info-left mt-2 md:mt-0 mx-3 md:mx-0 md:w-[650px] space-y-3 md:space-y-5 p-1 md:p-0">
-          <h1 className="text-xl font-medium ">
-            BlogSphere – Full-Stack Blogging Platform
+          <h1 className="text-xl font-medium text-[#007595] dark:text-blue-400">
+            5. BlogSphere – Full-Stack Blogging Platform
           </h1>
           <p className="md:p-5 text-gray-600 dark:text-gray-400 md:bg-gray-100 dark:md:bg-gray-800/50 rounded-2xl text-sm font-medium line-clamp-3 md:line-clamp-none">
             Built a responsive blogging platform using Next.js, MongoDB, Clerk,
@@ -430,7 +430,7 @@ const AllProjects = () => {
             scalable and clean architecture.
             <br />
             <br />
-            <strong>Tech Stack : </strong>{" "}
+            <strong className="text-blue-500">Tech Stack : </strong>{" "}
             <span className="italic">
               Next.js, Node.js, Express.js, MongoDB, Tailwind CSS.
             </span>
@@ -475,8 +475,8 @@ const AllProjects = () => {
       <div className="relative flex flex-col-reverse md:flex-row-reverse items-center md:justify-between lg:justify-evenly gap-4 mt-10 md:mt-20 border-2 border-gray-900/70 dark:border-white/60 md:border-none  md:p-0 rounded-xl md:rounded-none bg-gray-700/20 md:bg-transparent">
         <div className="absolute top-0  z-0 w-full h-[300px] lg:h-[200px] md:h-[300px]  bg-gradient-to-r from-pink-500 to-blue-500 rounded-full blur-3xl opacity-15 "></div>
         <div className="project-info-right-2 mx-3 md:mx-0 md:w-[650px] space-y-3 md:space-y-5 p-1 md:p-0">
-          <h1 className="text-xl font-medium ">
-            QuickBite – Food Delivery Web Application
+          <h1 className="text-xl font-medium text-[#007595] dark:text-blue-400">
+            6. QuickBite – Food Delivery Web Application
           </h1>
           <p className="md:p-5 text-gray-600 dark:text-gray-400 md:bg-gray-100 dark:md:bg-gray-800/50 rounded-2xl text-sm font-medium line-clamp-3 md:line-clamp-none">
             Designed and developed a full-stack food delivery platform with
@@ -488,7 +488,7 @@ const AllProjects = () => {
             across devices.
              <br />
             <br />
-            <strong>Tech Stack : </strong>{" "}
+            <strong className="text-blue-500">Tech Stack : </strong>{" "}
             <span className="italic">
               React.js, Node.js, Express.js, MongoDB, Stripe, Tailwind CSS.
             </span>

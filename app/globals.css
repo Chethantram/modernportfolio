@@ -114,6 +114,7 @@
 
 
 *{
+  
   scroll-behavior: smooth;
 }
 @layer base {
@@ -121,13 +122,14 @@
     box-shadow: 0 0 20px rgba(255, 0, 255, 0.4), 0 0 30px rgba(0, 0, 255, 0.4);
 
   }
-
 }
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    scroll-behavior: smooth;
   }
   body {
     @apply bg-background text-foreground;
+    scroll-behavior: smooth;
   }
 }

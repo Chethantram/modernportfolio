@@ -26,6 +26,7 @@ export default async function RootLayout({ children }) {
         disableTransitionOnChange
       >
         <body
+        
           className={`${poppins.className} antialiased bg-white dark:bg-[#0E0425] text-gray-800 dark:text-gray-300`}
         >
           <div className="px-5 md:px-12 lg:px-18 xl:px-40 ">

@@ -71,7 +71,7 @@ const Header = () => {
               "px-10 py-5 rounded-4xl bg-transparent dark:hover:bg-black/80 hover:bg-gray-300 border-2 text-black dark:text-white border-gray-800 dark:border-cyan-100/50"
             }
           >
-            <a target="_blank" href="https://drive.google.com/file/d/1RCn82Z15BzAjZLlYGQpTK-oJfIzUaq_v/view?usp=sharing">
+            <a target="_blank" href="https://drive.google.com/drive/folders/1Yw2FrCxNpCgayDDt8T31iRd3cyJvQcTx?usp=drive_link">
               My Resume
             </a>
           </Button>

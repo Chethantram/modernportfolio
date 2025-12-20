@@ -1,5 +1,7 @@
 import About from "@/components/About";
+import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
+import Experiences from "@/components/Experineces";
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
@@ -16,7 +18,9 @@ const page = () => {
         <About />
         <Skills />
         <Services />
+        <Experiences/>
         <Projects />
+        <Certifications/>
         <Contact />
       </div>
     </div>
