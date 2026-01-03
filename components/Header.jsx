@@ -30,11 +30,11 @@ const Header = () => {
       ref={container}
       className="relative mt-10 flex-row-reverse lg:flex md:justify-between items-center space-y-10 md:space-y-0   lg:mx-7"
     >
-      <div className="absolute top-0 left-0  z-0 w-3/4 h-[500px] md:h-[700px] lg:h-[500px]  bg-gradient-to-r from-blue-500  to-pink-500 rounded-full blur-3xl opacity-10 "></div>
+      <div className="absolute top-0 left-0  z-0 w-1/2 h-[500px] md:h-[700px] lg:h-[500px]  bg-gradient-to-r from-blue-500  to-pink-500 rounded-full blur-3xl opacity-10 "></div>
       <div className="relative w-[330px] h-[340px] md:w-[350px] md:h-[340px] lg:w-[400px] lg:h-[410px] xl:w-[412px]  xl:h-[432px]  mx-auto   lg:mx-0 rounded-full p-1.5 bg-gradient-to-r from-pink-500/80 via-cyan-500/80 to-blue-500/80  shadow-xl  shadow-pink-300/40 glow">
         <img
           src="/photo1.png"
-          className="absolute object-cover w-[320px] h-[328px] md:w-[340px]  md:h-[330px] lg:w-[390px] lg:h-[400px] xl:w-[400px] xl:h-[420px] rounded-full border-2 border-white bg-gray-300 shadow-2xl"
+          className="absolute object-cover w-[320px] h-[328px] md:w-[340px]  md:h-[330px] lg:w-[390px] lg:h-[400px] xl:w-[400px] xl:h-[420px] rounded-full border-2 border-white bg-gray-100 shadow-2xl"
           alt="photo"
         />
       </div>
