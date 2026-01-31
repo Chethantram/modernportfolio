@@ -27,10 +27,10 @@ export default async function RootLayout({ children }) {
       >
         <body
         
-          className={`${poppins.className} antialiased bg-white dark:bg-[#0E0425] text-gray-800 dark:text-gray-300`}
+          className={`${poppins.className} antialiased bg-white    dark:bg-slate-900 text-gray-700 dark:text-gray-200`}
         >
-          <div className="px-5 md:px-12 lg:px-18 xl:px-40 ">
-            <div className="min-h-screen">
+          <div className=" px-5 md:px-12 lg:px-18 xl:px-40">
+            <div className="min-h-screen pt-32 md:pt-40">
               {children} <Toaster />
             </div>
           </div>

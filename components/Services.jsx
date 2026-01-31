@@ -1,112 +1,127 @@
-'use client'
-import { Code2, LayoutDashboard, ServerCog } from 'lucide-react'
-import React, { useRef } from 'react'
+'use client';
+
+import React, { useRef } from 'react';
+import { Cloud, Code2, Database, LayoutDashboard, ServerCog } from 'lucide-react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 gsap.registerPlugin(ScrollTrigger);
 
+const SERVICES = [
+  {
+    title: 'Full-Stack Development',
+    description:
+      'Delivering complete end-to-end solutions by seamlessly connecting frontend, backend, and databases.',
+    icon: Code2,
+  },
+  {
+    title: 'Frontend Development',
+    description:
+      'Building responsive, modern, and user-friendly interfaces with a focus on performance and clean design.',
+    icon: LayoutDashboard,
+  },
+  {
+    title: 'Backend & API Integration',
+    description:
+      'Developing secure, scalable backend systems and APIs to power reliable applications.',
+    icon: ServerCog,
+  },
+  {
+    title: 'Cloud & Deployment Services',
+    description:
+      'Deploying and managing applications on the cloud with optimized, production-ready setups.',
+    icon: Cloud,
+  },
+  {
+    title: 'Database Design & Management',
+    description:
+      'Designing and managing efficient databases to ensure performance, reliability, and data integrity.',
+    icon: Database,
+  },
+];
+
 const Services = () => {
-  const sectionRef = useRef();
+  const sectionRef = useRef(null);
   const q = gsap.utils.selector(sectionRef);
 
   useGSAP(() => {
-    const cards = q('.service-card');
-    cards.forEach((card, i) => {
-      gsap.set(card, { y: 80, opacity: 0 });
-      ScrollTrigger.create({
-        trigger: card,
-        start: 'top 85%',
-        onEnter: () => {
-          gsap.to(card, {
-            y: 0,
-            opacity: 1,
-            duration: 0.7,
-            delay: i * 0.1,
-            ease: 'power3.out',
-          });
-          // Animate children
-          const children = card.querySelectorAll('.service-animate');
-          children.forEach((el, j) => {
-            gsap.to(el, {
-              y: 0,
-              opacity: 1,
-              duration: 0.6,
-              delay: i * 0.1 + j * 0.07,
-              ease: 'power3.out',
-            });
-          });
-        },
-        onLeaveBack: () => {
-          gsap.to(card, { y: 80, opacity: 0, duration: 0.3 });
-          const children = card.querySelectorAll('.service-animate');
-          children.forEach((el) => {
-            gsap.to(el, { y: 40, opacity: 0, duration: 0.2 });
-          });
-        },
-        onLeave: () => {
-          gsap.to(card, { y: 80, opacity: 0, duration: 0.3 });
-          const children = card.querySelectorAll('.service-animate');
-          children.forEach((el) => {
-            gsap.to(el, { y: 40, opacity: 0, duration: 0.2 });
-          });
-        },
-        onEnterBack: () => {
-          gsap.to(card, {
-            y: 0,
-            opacity: 1,
-            duration: 0.7,
-            delay: i * 0.1,
-            ease: 'power3.out',
-          });
-          const children = card.querySelectorAll('.service-animate');
-          children.forEach((el, j) => {
-            gsap.to(el, {
-              y: 0,
-              opacity: 1,
-              duration: 0.6,
-              delay: i * 0.1 + j * 0.07,
-              ease: 'power3.out',
-            });
-          });
+    q('.service-card').forEach((card, i) => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 85%',
+          toggleActions: 'play none none reverse',
         },
       });
-      // Set initial state for children
-      const children = card.querySelectorAll('.service-animate');
-      children.forEach((el) => {
-        gsap.set(el, { y: 40, opacity: 0 });
-      });
+
+      tl.fromTo(
+        card,
+        { y: 60, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          delay: i * 0.08,
+          ease: 'power3.out',
+        }
+      ).fromTo(
+        card.querySelectorAll('.service-animate'),
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          stagger: 0.08,
+          ease: 'power3.out',
+        },
+        '-=0.3'
+      );
     });
   }, []);
 
   return (
-    <div id='services' ref={sectionRef} className='mt-32'>
-        <h1 className="text-center text-2xl md:text-3xl font-bold dark:bg-gradient-to-tl from-blue-500 via-cyan-500  to-blue-500 bg-clip-text dark:text-transparent service-animate">
-        Services
-      </h1>
-        <div className='relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-10 lg:gap-2 xl:gap-10 mt-20 '>
-          <div className="absolute top-0  z-0 w-full h-[450px] md:h-[400px] lg:h-[400px] xl:h-[200px]  bg-gradient-to-r from-pink-500/60 to-blue-500 rounded-full blur-3xl opacity-15 "></div>
-            <div className='p-4 border-2 border-cyan-700 dark:border-cyan-200/40 rounded-2xl space-y-2 mx-5 md:mx-0 lg:mx-5 bg-gray-100 dark:bg-gray-700/20 service-card'>
-                <span className='service-animate'><Code2 className='size-8'/></span>
-                <h1 className='text-lg font-bold mt-2 text-cyan-700 dark:bg-gradient-to-r from-pink-500 via-cyan-300 to-blue-500 bg-clip-text dark:text-transparent service-animate'>Web Application Development</h1>
-                <p className='text-sm font-medium text-gray-600 dark:text-gray-400 service-animate'>End-to-end development of fully functional, scalable web apps — from frontend UI to backend logic and database integration.</p>
-            </div>
-            <div className='p-4 border-2 border-cyan-700 dark:border-cyan-200/40 rounded-2xl space-y-2 mx-5 md:mx-0 lg:mx-5 bg-gray-100 dark:bg-gray-700/20 service-card'>
-                <span className='service-animate'><LayoutDashboard className='size-8'/></span>
-                <h1 className='text-lg font-bold mt-2 text-cyan-700 dark:bg-gradient-to-r from-pink-500 via-cyan-300 to-blue-500 bg-clip-text dark:text-transparent service-animate'>Responsive Frontend & UI Design</h1>
-                <p className='text-sm font-medium text-gray-600 dark:text-gray-400 service-animate'>Building sleek, modern, mobile-friendly interfaces using frameworks like React, Tailwind CSS, or Next.js.</p>
-            </div>
-            <div className='p-4 border-2 border-cyan-700 dark:border-cyan-200/40 rounded-2xl space-y-2 mx-5 md:mx-0 lg:mx-5 bg-gray-100 dark:bg-gray-700/20 service-card'>
-                <span className='service-animate'><ServerCog className='size-8'/></span>
-                <h1 className='text-lg font-bold mt-2 text-cyan-700 dark:bg-gradient-to-r from-pink-500 via-cyan-300 to-blue-500 bg-clip-text dark:text-transparent service-animate'>Backend & API Integration</h1>
-                <p className='text-sm font-medium lg:line-clamp-6 xl:line-clamp-none text-gray-600 dark:text-gray-400 service-animate'>Creating robust servers, databases, and REST APIs using Node.js, Express, MongoDB, and cloud platforms.
-Building scalable, secure backend systems.</p>
-            </div>
-            
-        </div>
+    <section
+      id="services"
+      ref={sectionRef}
+      className="relative mx-auto max-w-6xl px-4 py-20"
+    >
+      {/* Header */}
+      <div className="mb-16 text-center">
+        <h2 className="text-3xl font-bold text-blue-500 dark:text-cyan-400">
+          Services
+        </h2>
+        <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
+          What I can help you build
+        </p>
+      </div>
 
-    </div>
-  )
-}
+      {/* Background Glow */}
+      {/* <div className="pointer-events-none absolute inset-x-0 top-24 h-72 bg-gradient-to-r from-pink-500/20 via-cyan-500/20 to-blue-500/20 blur-3xl" /> */}
 
-export default Services
+      {/* Cards */}
+      <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {SERVICES.map(({ title, description, icon: Icon }) => (
+          <div
+            key={title}
+            className="service-card rounded-2xl  p-6 shadow-lg border dark:hover:shadow-white/10 transition hover:-translate-y-1 hover:shadow-xl "
+          >
+            <div className="service-animate mb-4 inline-flex items-center justify-center rounded-xl bg-cyan-500/10 p-3 text-blue-500 dark:text-cyan-400">
+              <Icon className="h-6 w-6" />
+            </div>
+
+            <h3 className="service-animate text-lg font-semibold text-gray-900 dark:text-white">
+              {title}
+            </h3>
+
+            <p className="service-animate mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+              {description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Services;

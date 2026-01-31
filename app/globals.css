@@ -45,7 +45,7 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: #EDE7E3;
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -118,10 +118,10 @@
   scroll-behavior: smooth;
 }
 @layer base {
-  .glow {
+  /* .glow {
     box-shadow: 0 0 20px rgba(255, 0, 255, 0.4), 0 0 30px rgba(0, 0, 255, 0.4);
 
-  }
+  } */
 }
 @layer base {
   * {
@@ -132,4 +132,26 @@
     @apply bg-background text-foreground;
     scroll-behavior: smooth;
   }
+}
+
+.grid-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.grid-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(94, 85, 85, 0.06) 2px, transparent 2px),
+    linear-gradient(to bottom, rgba(94, 85, 85, 0.06) 2px, transparent 2px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.grid-bg > * {
+  position: relative;
+  /* z-index: 1; */
 }

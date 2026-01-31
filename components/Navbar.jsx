@@ -38,12 +38,11 @@ const Navbar = () => {
     setMenu("Home");
   }, [])
   return (
-    <div className="">
-      <div className="pt-4 md:pt-8">
-        <div className="relative p-3 md:p-5 border-2 border-gray-500 shadow-md shadow-white/20 rounded-xl flex justify-between  items-center ">
+    <div className="fixed top-0 left-0 right-20  sm:right-0 justify-center sm:justify-start items-center sm:items-start max-w-xl sm:max-w-none z-50 px-5 md:px-12 lg:px-18 xl:px-40 pt-4 md:pt-8 bg-gradient-to-b from-white/95 dark:from-slate-900/80 to-transparent">
+      <div className="relative p-3 md:p-5 border shadow-lg rounded-full flex justify-between items-center hover:shadow-xl dark:hover:shadow-white/10 transition-all duration-300 bg-white/90 dark:bg-slate-900/50 backdrop-blur-md">
           <Link href={'/'}>
             <span className="relative inline-block">
-              <h1 ref={chethanRef} className="text-md dark:text-white font-medium  relative z-10">CHETHAN</h1>
+              <h1 ref={chethanRef} className="text-sm md:text-md dark:text-white font-medium  relative z-10">CHETHAN</h1>
               <span
                 ref={underlineRef}
                 className="absolute left-0 bottom-0 h-[3px] w-8 rounded-full bg-gradient-to-r from-gray-800/0 dark:from-white/0 via-gray-800 dark:via-white to-gray-800/0 dark:to-white/0 blur-[2px] z-0 pointer-events-none"
@@ -52,7 +51,7 @@ const Navbar = () => {
             </span>
           </Link>
           <div className="hidden sm:block">
-            <ul className="flex items-center gap-5 text-sm font-medium">
+            <ul className="flex  items-center gap-5 text-sm font-medium">
               {/* <Link
                 href="#home"
                 className={`hover:border-2 hover:border-gray-500/50 hover:px-2 hover:rounded-4xl ${
@@ -64,8 +63,8 @@ const Navbar = () => {
               </Link> */}
               <Link
                 href="#about"
-                className={`hover:border-2 hover:border-gray-500/50 hover:px-2 hover:rounded-4xl ${
-                  menu === "About" ? "border-2 border-gray-800/80 dark:border-gray-400/80 px-2 rounded-4xl" : ""
+                className={`transition-all duration-200 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105  ${
+                  menu === "About" ? "text-blue-600  dark:text-blue-400" : ""
                 }`}
                 onClick={() => setMenu("About")}
               >
@@ -73,8 +72,8 @@ const Navbar = () => {
               </Link>
               <Link
                 href="#services"
-                className={`hover:border-2 hover:border-gray-500/50 hover:px-2 hover:rounded-4xl ${
-                  menu === "Services" ? "border-2 border-gray-800/80 dark:border-gray-400/80 px-2 rounded-4xl" : ""
+                className={`transition-all duration-200 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 ${
+                  menu === "Services" ? "text-blue-600  dark:text-blue-400" : ""
                 }`}
                 onClick={() => setMenu("Services")}
               >
@@ -82,8 +81,8 @@ const Navbar = () => {
               </Link>
               <Link
                 href="#experience"
-                className={`hover:border-2 hover:border-gray-500/50 hover:px-2 hover:rounded-4xl ${
-                  menu === "Experience" ? "border-2 border-gray-800/80 dark:border-gray-400/80 px-2 rounded-4xl" : ""
+                className={`transition-all duration-200 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 ${
+                  menu === "Experience" ? "text-blue-600  dark:text-blue-400" : ""
                 }`}
                 onClick={() => setMenu("Experience")}
               >
@@ -91,8 +90,8 @@ const Navbar = () => {
               </Link>
               <Link
                 href="#projects"
-                className={`hover:border-2 hover:border-gray-500/50 hover:px-2 hover:rounded-4xl ${
-                  menu === "Projects" ? "border-2 border-gray-800/80 dark:border-gray-400/80 px-2 rounded-4xl" : ""
+                className={`transition-all duration-200 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 ${
+                  menu === "Projects" ? "text-blue-600  dark:text-blue-400" : ""
                 }`}
                 onClick={() => setMenu("Projects")}
               >
@@ -100,8 +99,8 @@ const Navbar = () => {
               </Link>
               <Link
                 href="#certificate"
-                className={`hover:border-2 hover:border-gray-500/50 hover:px-2 hover:rounded-4xl ${
-                  menu === "Certificate" ? "border-2 border-gray-800/80 dark:border-gray-400/80 px-2 rounded-4xl" : ""
+                className={`transition-all duration-200 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 ${
+                  menu === "Certificate" ? "text-blue-600  dark:text-blue-400" : ""
                 }`}
                 onClick={() => setMenu("Certificate")}
               >
@@ -109,16 +108,16 @@ const Navbar = () => {
               </Link>
             </ul>
           </div>
-          <div className="flex items-center gap-2 flex-row-reverse md:block">
+          <div className="flex items-center gap-2 flex-row-reverse sm:flex-row">
                   {/* mobile navbar */}
           <div className="block sm:hidden">
-            <Sheet open={open} onOpenChange={setOpen} >
+            <Sheet  open={open} onOpenChange={setOpen} >
               <SheetTrigger asChild>
-                <Button variant="ghost">
+                <Button variant="ghost" size="sm">
                   <Menu className="size-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent className={"dark:bg-[#0E0425] dark:text-gray-300 w-[200px]"}>
+              <SheetContent className={"dark:bg-[#0E0425] dark:text-gray-300 w-[200px] sm:hidden"}>
                 <SheetHeader>
                   <SheetTitle className={"dark:text-gray-300 font-medium"}>
                     Menu
@@ -126,91 +125,84 @@ const Navbar = () => {
                 </SheetHeader>
                 <div className="p-5 ">
                   <ul className="flex flex-col items-start  gap-3 text-sm font-medium">
-                    {/* <Link
-                      href="#home"
-                      className={`hover:text-blue-500 ${
-                        menu === "Home" ? "text-blue-600" : ""
-                      }`}
-                      onClick={() => {
-                        setOpen(false);
-                        setMenu("Home");
-                      }}
-                    >
-                      Home
-                    </Link> */}
-                    <Link
-                      href="#about"
-                      className={`hover:text-blue-500 ${
-                        menu === "About" ? "text-blue-600" : ""
-                      }`}
-                      onClick={() => {
-                        setOpen(false);
-                        setMenu("About");
-                      }}
-                    >
-                      About
-                    </Link>
-                    <Link
-                      href="#services"
-                      className={`hover:text-blue-500 ${
-                        menu === "Services" ? "text-blue-600" : ""
-                      }`}
-                      onClick={() => {
-                        setMenu("Services");
-                        setOpen(false);
-                      }}
-                    >
-                      Services
-                    </Link>
-                    <Link
-                      href="#experience"
-                      className={`hover:text-blue-500 ${
-                        menu === "Experience" ? "text-blue-600" : ""
-                      }`}
-                      onClick={() => {
-                        setMenu("Experience");
-                        setOpen(false);
-                      }}
-                    >
-                      Experience
-                    </Link>
-                    <Link
-                      href="#projects"
-                      className={`hover:text-blue-500 ${
-                        menu === "Projects" ? "text-blue-600" : ""
-                      }`}
-                      onClick={() => {
-                        setMenu("Projects");
-                        setOpen(false);
-                      }}
-                    >
-                      Projects
-                    </Link>
-                    <Link
-                      href="#certificate"
-                      className={`hover:text-blue-500 ${
-                        menu === "Certificate" ? "text-blue-600" : ""
-                      }`}
-                      onClick={() => {
-                        setMenu("Certificate");
-                        setOpen(false);
-                      }}
-                    >
-                      Certificate
-                    </Link>
+                    <li>
+                      <Link
+                        href="#about"
+                        className={`hover:text-blue-500 ${
+                          menu === "About" ? "text-blue-600" : ""
+                        }`}
+                        onClick={() => {
+                          setOpen(false);
+                          setMenu("About");
+                        }}
+                      >
+                        About
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="#services"
+                        className={`hover:text-blue-500 ${
+                          menu === "Services" ? "text-blue-600" : ""
+                        }`}
+                        onClick={() => {
+                          setMenu("Services");
+                          setOpen(false);
+                        }}
+                      >
+                        Services
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="#experience"
+                        className={`hover:text-blue-500 ${
+                          menu === "Experience" ? "text-blue-600" : ""
+                        }`}
+                        onClick={() => {
+                          setMenu("Experience");
+                          setOpen(false);
+                        }}
+                      >
+                        Experience
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="#projects"
+                        className={`hover:text-blue-500 ${
+                          menu === "Projects" ? "text-blue-600" : ""
+                        }`}
+                        onClick={() => {
+                          setMenu("Projects");
+                          setOpen(false);
+                        }}
+                      >
+                        Projects
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="#certificate"
+                        className={`hover:text-blue-500 ${
+                          menu === "Certificate" ? "text-blue-600" : ""
+                        }`}
+                        onClick={() => {
+                          setMenu("Certificate");
+                          setOpen(false);
+                        }}
+                      >
+                        Certificate
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </SheetContent>
             </Sheet>
           </div>
-          <div className=" mt-2 md:mt-0  md:flex items-center gap-2">
+          <div className="md:flex items-center gap-2 ml-2 md:ml-0">
             <ModeToggle />
           </div>
-          </div>
-
-          
-
-          
         </div>
       </div>
     </div>
