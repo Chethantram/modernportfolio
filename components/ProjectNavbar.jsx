@@ -38,7 +38,7 @@ const ProjectNavbar = () => {
     setMenu("Home");
   }, [])
   return (
-    <div className="">
+    <div className="relative">
       <div className="pt-4 md:pt-8">
         <div className="relative p-3 md:p-5 border-2 border-gray-500 shadow-md shadow-white/20 rounded-xl flex justify-between  items-center ">
           <Link href={'/'}>

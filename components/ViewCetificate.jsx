@@ -34,7 +34,7 @@ const ViewCetificate = ({ open, onClose, src, title, description }) => {
     >
       <div className="absolute inset-0 bg-black/60" onClick={onClose} />
 
-      <div className="relative z-10 w-full max-w-4xl rounded-lg bg-background shadow-lg overflow-hidden">
+      <div className="relative z-10 w-full max-w-4xl rounded-2xl bg-background shadow-xl overflow-hidden">
         <button
           aria-label="Close preview"
           onClick={onClose}
@@ -43,7 +43,7 @@ const ViewCetificate = ({ open, onClose, src, title, description }) => {
           <CloseIcon />
         </button>
 
-        <div className="p-3 sm:p-6 dark:bg-[#0E0425]/50 border shadow-md ">
+        <div className="p-3 sm:p-6 dark:bg-slate-900/50 border shadow-md ">
           <div className="mb-3 flex items-start justify-between gap-4">
             <div className="text-gray-700 dark:text-gray-300">
               <h3 className="text-lg font-semibold ">{title}</h3>
@@ -70,14 +70,14 @@ const ViewCetificate = ({ open, onClose, src, title, description }) => {
               onClick={onClose}
               rel="noreferrer"
               className={
-              "px-6 py-1 cursor-pointer rounded-4xl text-sm bg-transparent dark:hover:bg-black/80 hover:bg-gray-300 border-2 text-gray-700 dark:text-white border-gray-800 dark:border-cyan-100/50"
+              "px-6  cursor-pointer rounded-4xl text-sm bg-transparent dark:hover:bg-black/80 hover:bg-gray-300 border-2 text-gray-700 dark:text-white border-gray-800 dark:border-cyan-100/50"
             }
             >
               Close
             </button>
             {src && (
               <a href={src} target="_blank" rel="noreferrer" className={
-                "px-10 rounded-4xl   py-1 text-md border-2 border-cyan-100/50 shadow-lg  font-semibold text-white  bg-gradient-to-r from-blue-500 to-pink-500 hover:from-pink-500 hover:to-blue-500 transition duration-300"
+                "px-6 rounded-4xl   py-2 text-md border  shadow-2xl shadow-gray-800/20 dark:shadow-cyan-500/20  font-semibold text-white hover:scale-105 hover:bg-blue-600 bg-blue-500 dark:bg-cyan-400 transition duration-300"
               }>
                 Open in new tab
               </a>

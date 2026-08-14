@@ -1,225 +1,220 @@
-"use client"
-import React, { useRef, useState } from "react"
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "./ui/card"
-import { Button } from "./ui/button"
-import ViewCetificate from "./ViewCetificate"
-import { ImageDown } from "lucide-react"
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+"use client";
 
-const STATIC_CERTIFICATIONS = [
+import React, { useRef, useState } from "react";
+import { Card, CardContent } from "./ui/card";
+import { Button } from "./ui/button";
+import { ImageDown, Award } from "lucide-react";
+import ViewCetificate from "./ViewCetificate";
+
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const CERTIFICATIONS = [
   {
     id: 1,
     title: "ReactJS",
-    issuer: "Hackerrank",
-    date: "06/2025",
+    issuer: "HackerRank",
+    date: "Jun 2025",
     description:
-      "I learned core React concepts such as components, hooks, state management, and building reusable UI components.",
+      "Learned core React concepts including hooks, state management, and reusable component architecture.",
     link: "/certificates/reactjs.png",
   },
   {
     id: 2,
     title: "OOPs with Java",
     issuer: "Scaler",
-    date: "07/2024",
+    date: "Jul 2024",
     description:
-      "I learned object-oriented programming concepts including classes, inheritance, polymorphism, encapsulation, and abstraction using Java.",
+      "Mastered object-oriented principles such as inheritance, polymorphism, encapsulation, and abstraction.",
     link: "/certificates/oops in java.png",
   },
   {
     id: 3,
     title: "Python Essentials",
     issuer: "Cisco",
-    date: "12/2025",
+    date: "Dec 2025",
     description:
-      "I learned Python fundamentals such as variables, control structures, functions, and basic problem-solving techniques.",
+      "Covered Python fundamentals, control flow, functions, and problem-solving techniques.",
     link: "/certificates/python.png",
   },
   {
     id: 4,
     title: "SQL",
-    issuer: "Hackerrank",
-    date: "7/2025",
+    issuer: "HackerRank",
+    date: "Jul 2025",
     description:
-      "I learned how to write SQL queries for data retrieval, filtering, joins, and basic database management operations.",
+      "Gained hands-on experience with SQL queries, joins, filtering, and database operations.",
     link: "/certificates/sql.png",
   },
   {
     id: 5,
     title: "Cyber Security Basics",
     issuer: "Udemy",
-    date: "12/2024",
+    date: "Dec 2024",
     description:
-      "I learned fundamental cybersecurity concepts like threats, vulnerabilities, basic security practices, and safe system usage.",
+      "Learned foundational security concepts, threats, vulnerabilities, and safe practices.",
     link: "/certificates/cybercertificate.png",
   },
   {
     id: 6,
     title: "Technology Job Simulation",
     issuer: "Deloitte",
-    date: "08/2025",
+    date: "Aug 2025",
     description:
-      "I gained practical exposure to real-world technology tasks by simulating job-related problem-solving and decision-making scenarios.",
+      "Worked through real-world tech problem simulations and decision-making scenarios.",
     link: "/certificates/simulation.png",
   },
   {
-    id: 6,
+    id: 7,
     title: "Time Management",
     issuer: "Infosys",
-    date: "06/2025",
+    date: "Jun 2025",
     description:
-      "I learned techniques to plan tasks effectively, prioritize work, and manage time efficiently to improve productivity.",
+      "Learned task prioritization and productivity techniques for professional environments.",
     link: "/certificates/timemanagement.png",
   },
   {
-    id: 7,
+    id: 8,
     title: "Email Writing",
     issuer: "Infosys",
-    date: "06/2025",
+    date: "Jun 2025",
     description:
-      "I learned how to write clear, professional, and structured emails for effective workplace communication.",
+      "Developed skills for clear, structured, and professional workplace communication.",
     link: "/certificates/emailwriting.png",
   },
-]
+];
 
 const Certifications = () => {
-  const [modalOpen, setModalOpen] = useState(false)
-  const [selected, setSelected] = useState(null)
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selected, setSelected] = useState(null);
 
-  const experienceRef = useRef();
-        const q = gsap.utils.selector(experienceRef);
-      
-        useGSAP(() => {
-          const cards = q('.service-card');
-          cards.forEach((card, i) => {
-            gsap.set(card, { y: 80, opacity: 0 });
-            ScrollTrigger.create({
-              trigger: card,
-              start: 'top 85%',
-              onEnter: () => {
-                gsap.to(card, {
-                  y: 0,
-                  opacity: 1,
-                  duration: 0.7,
-                  delay: i * 0.1,
-                  ease: 'power3.out',
-                });
-                // Animate children
-                const children = card.querySelectorAll('.service-animate');
-                children.forEach((el, j) => {
-                  gsap.to(el, {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.6,
-                    delay: i * 0.1 + j * 0.07,
-                    ease: 'power3.out',
-                  });
-                });
-              },
-              onLeaveBack: () => {
-                gsap.to(card, { y: 80, opacity: 0, duration: 0.3 });
-                const children = card.querySelectorAll('.service-animate');
-                children.forEach((el) => {
-                  gsap.to(el, { y: 40, opacity: 0, duration: 0.2 });
-                });
-              },
-              onLeave: () => {
-                gsap.to(card, { y: 80, opacity: 0, duration: 0.3 });
-                const children = card.querySelectorAll('.service-animate');
-                children.forEach((el) => {
-                  gsap.to(el, { y: 40, opacity: 0, duration: 0.2 });
-                });
-              },
-              onEnterBack: () => {
-                gsap.to(card, {
-                  y: 0,
-                  opacity: 1,
-                  duration: 0.7,
-                  delay: i * 0.1,
-                  ease: 'power3.out',
-                });
-                const children = card.querySelectorAll('.service-animate');
-                children.forEach((el, j) => {
-                  gsap.to(el, {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.6,
-                    delay: i * 0.1 + j * 0.07,
-                    ease: 'power3.out',
-                  });
-                });
-              },
-            });
-            // Set initial state for children
-            const children = card.querySelectorAll('.service-animate');
-            children.forEach((el) => {
-              gsap.set(el, { y: 40, opacity: 0 });
-            });
-          });
-        }, []);
+  const sectionRef = useRef(null);
+  const q = gsap.utils.selector(sectionRef);
+
+  useGSAP(() => {
+    q(".cert-card").forEach((card, i) => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        })
+        .fromTo(
+          card,
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            delay: i * 0.06,
+            ease: "power3.out",
+          }
+        )
+        .fromTo(
+          card.querySelectorAll(".cert-animate"),
+          { y: 25, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.45,
+            stagger: 0.07,
+            ease: "power3.out",
+          },
+          "-=0.3"
+        );
+    });
+  }, []);
 
   return (
-    <section ref={experienceRef} id="certificate" className="space-y-6 py-12 md:py-20">
-<h1 className="service-animate text-center text-2xl md:text-3xl font-bold dark:bg-gradient-to-b from-pink-400 via-cyan-500 to-blue-500 bg-clip-text dark:text-transparent">
-        Certifications
-      </h1>    
+    <section
+      ref={sectionRef}
+      id="certificate"
+      className="relative mx-auto max-w-6xl px-4 py-28"
+    >
+      {/* Header */}
+      <div className="mb-20 text-center">
+        <h2 className="text-3xl font-bold text-blue-500 dark:text-cyan-400">
+          Certifications
+        </h2>
+        <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
+          Continuous learning & professional development
+        </p>
+      </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 mt-6">
-        {STATIC_CERTIFICATIONS.map((c) => (
-          <Card key={c.id} className={' service-card border-2 border-gray-400 dark:border-cyan-200/40 rounded-2xl bg-gray-50 dark:bg-gray-700/20 service-card'}>
-            <CardHeader>
-              <CardTitle className="flex items-center justify-between gap-4">
-                <div className="flex flex-col">
-                  <span className="font-semibold text-[#007595] dark:text-blue-400 service-animate">{c.title}</span>
-                  <span className="text-sm text-muted-foreground service-animate">{c.issuer}</span>
+      {/* Cards */}
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {CERTIFICATIONS.map((c) => (
+          <Card
+            key={c.id}
+            className="cert-card relative overflow-hidden rounded-2xl border shadow-lg hover:scale-105 bg-transparent  transition  hover:shadow-xl"
+          >
+            {/* Accent rail */}
+            <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-cyan-400 to-blue-500" />
+
+            <CardContent className="space-y-4 p-6">
+              {/* Header */}
+              <div className="flex items-start justify-between">
+                <div className="cert-animate flex items-center gap-2">
+                  <Award className="h-5 w-5 text-cyan-500" />
+                  <h3 className="text-sm font-semibold text-gray-900 dark:text-white">
+                    {c.title}
+                  </h3>
                 </div>
-                <div className="text-xs text-muted-foreground service-animate">{c.date}</div>
-              </CardTitle>
-            </CardHeader>
 
-            <CardContent>
-              <p className="text-sm text-muted-foreground service-animate">{c.description}</p>
-            </CardContent>
+                <span className="cert-animate rounded-full bg-cyan-500/10 px-3 py-1 text-xs text-cyan-700 dark:text-cyan-300">
+                  {c.date}
+                </span>
+              </div>
 
-            <CardFooter>
-              <div className="ml-auto flex gap-2">
-                {c.link ? (
+              {/* Issuer */}
+              <span className="cert-animate inline-block rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-700 dark:bg-white/10 dark:text-gray-300">
+                {c.issuer}
+              </span>
+
+              {/* Description */}
+              <p className="cert-animate text-sm leading-relaxed text-gray-600 dark:text-gray-400 line-clamp-4">
+                {c.description}
+              </p>
+
+              {/* Action */}
+              <div className="pt-2">
+                {c.link && (
                   <Button
                     size="sm"
                     onClick={() => {
-                      setSelected(c)
-                      setModalOpen(true)
+                      setSelected(c);
+                      setModalOpen(true);
                     }}
-                    className={
-              "service-animate px-5 py-0 rounded-4xl text-gray-800 bg-transparent dark:hover:bg-black/80 hover:bg-gray-300 border-2  dark:text-white border-gray-800/30 dark:border-cyan-100/30"
-            }
+                    className="cert-animate gap-2 rounded-full border border-cyan-500/40 bg-transparent text-gray-700 hover:bg-cyan-500/10 dark:text-gray-200"
                   >
-                   <ImageDown size={20}/> View
-                  </Button>
-                ) : (
-                  <Button size="sm" variant="outline" disabled>
-                    No preview
+                    <ImageDown size={16} />
+                    View Certificate
                   </Button>
                 )}
               </div>
-            </CardFooter>
+            </CardContent>
           </Card>
         ))}
       </div>
 
+      {/* Modal */}
       <ViewCetificate
         open={modalOpen}
         onClose={() => {
-          setModalOpen(false)
-          setSelected(null)
+          setModalOpen(false);
+          setSelected(null);
         }}
         src={selected?.link}
         title={`${selected?.title || ""} — ${selected?.issuer || ""}`}
         description={selected?.description}
       />
     </section>
-  )
-}
+  );
+};
 
-export default Certifications
+export default Certifications;

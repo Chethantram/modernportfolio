@@ -13,7 +13,7 @@ const page = () => {
   return (
     <div>
       <Navbar />
-      <div className="relative ">
+      <div className="relative">
         <Header />
         <About />
         <Skills />
