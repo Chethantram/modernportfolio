@@ -11,14 +11,37 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 const STATIC_EXPERIENCES = [
   {
     id: 1,
+    role: "AI Technical Developer Intern",
+    company: "GE Appliances, a Haier Company",
+    location: "Bengaluru, India",
+    start: "Jul 2026",
+    end: "Present",
+    description:
+      "Contributing to the Brilliant Factory 2.0 Manufacturing AI platform by developing AI agents using the MCP/ADK multi-agent framework, enabling agent-to-agent interactions, and building AI-powered UI components. Prototyping conversational interfaces, dashboards, and AI-assisted workflows while supporting feature implementation, testing, and documentation.",
+    link: "#",
+    tech: "Python · GCP · Agentic AI · MCP · Gemini ADK · Angular",
+  },
+  {
+    id: 2,
+    role: "Python Tech Stack Intern",
+    company: "Infosys SpringBoard",
+    location: "Remote",
+    start: "Feb 2026",
+    end: "Apr 2026",
+    description:
+      "Developed an AI-powered career recommendation system using Machine Learning, FastAPI, and PostgreSQL. Built backend APIs to process 1,400+ records, optimized model performance to achieve 98% accuracy, and delivered real-time top-5 career predictions within 5–10 seconds.",
+    link: "/internshipinfosysspringboard.jpg",
+    tech: "Python · FastAPI · XGBoost · Machine Learning · PostgreSQL",
+  },
+  {
+    id: 3,
     role: "Software Engineering Intern",
     company: "DNote",
     location: "Remote",
-    start: "09/2025",
-    end: "10/2025",
-    current: false,
+    start: "Sep 2025",
+    end: "Oct 2025",
     description:
-      "I worked as an SDE Intern at DNote, where I designed database tables in Supabase and implemented Row Level Security (RLS) for secure data access. I built the UI from Figma designs and developed a PDF editor feature that allows users to upload, view, and edit PDFs with tools like text, markers, shapes, highlighters, stamps, media, and zoom functionality.",
+      "Designed secure database schemas using Supabase with Row Level Security. Built UI from Figma designs and developed a PDF editor supporting annotations, shapes, media, and zoom tools.",
     link: "/internshipdnote.jpg",
     tech: "React · Tailwind · Supabase · Database Design",
   },
